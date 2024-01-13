@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+
+/* ========================= common css ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+img {
+  vertical-align: middle;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+a,
+img,
+ol,
+li,
+div {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+:root {
+  --primary: #f36e3e;
+  --primary_hover: #dc6338;
+  --secondary: #186367;
+  --text: #666666;
+  --accent: #000000;
+  --footer_text_color: #bcd2d3;
+  --white_color: #fff;
+}
+/* ========================= common css ========================== */
+/* ========================= navbar css ========================== */
+.customUL li a {
+  padding: 1.7em 1.4em;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: all linear 0.2s;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  -ms-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+}
+
+.customUL li a:hover {
+  color: var(--primary_hover);
+}
+
+.customUL li a span {
+  position: relative;
+}
+
+.customUL li a span::after {
+  position: absolute;
+  content: "";
+  bottom: 2px;
+  right: -14px;
+  width: calc(10px - 3px);
+  height: calc(10px - 3px);
+  background: var(--primary);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.customBtn {
+  padding: 17px 35px;
+  background: var(--primary);
+  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.customBtn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -100%;
+  height: calc(100% - 50%);
+  width: calc(100%);
+  background: var(--accent);
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -ms-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+}
+
+.customBtn::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 100%;
+  height: calc(100% - 50%);
+  width: calc(100%);
+  background: var(--accent);
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -ms-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+}
+
+.customBtn:hover {
+  color: #fff;
+  font-weight: 600;
+}
+.customBtn:hover.customBtn::after,
+.customBtn:hover.customBtn::before {
+  left: 0%;
+  z-index: -1;
+}
+
+.customBtn i[class="fa-regular fa-arrow-right-long fa-beat"] {
+  margin-left: 5px;
+  color: var(--white_color);
+}
+
+.toogleCustomBtn {
+  background: var(--primary_hover);
+}
+.toogleCustomBtn__icon {
+  margin-top: calc(15px - 5px);
+  color: #bcd2d3;
+}
+
+.toogleCustomBtn:focus {
+  box-shadow: none;
+}
+
+/* ========================= navbar css ========================== */
+/* ========================= Hero part css ========================== */
+.heroRight__title {
+  font-size: 30px;
+  line-height: 40px;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.heroRight__details {
+  font-size: 17px;
+  font-weight: 400;
+  color: #666666;
+  line-height: calc(40px - 10px);
+  text-align: justify;
+}
+
+.area {
+  border-right: 2px solid var(--footer_text_color);
+}
+.area__icon {
+  color: var(--primary);
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.area_count {
+  font-family: ruberoid, Sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.area_describe {
+  font-weight: 400;
+}
+
+.next--area {
+  border-right: none;
+}
+/* ========================= Hero part css ========================== */
+/* ========================= apartment part css ========================== */
+.apartmentpart {
+  padding: 20px 0;
+}
+
+.apartment__title {
+  color: var(--secondary, #186367);
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 400;
+  font-family:
+    helveticaneue-light,
+    helvetica neue light,
+    helvetica neue,
+    Helvetica,
+    primary Arial,
+    lucida grande,
+    sans-serif;
+}
+
+.aprtmentItem {
+  overflow: hidden;
+  padding: 0 0 200px;
+}
+.aprtmentItem__img {
+  transition: all linear 0.2s;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  -ms-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  scale: 1.1;
+}
+.aprtmentItem:hover .aprtmentItem__img {
+  scale: 1.2;
+}
+
+.aprtOverlay {
+  right: 0;
+  width: 90%;
+  bottom: 120px;
+  background: #ffffff;
+  box-shadow: 0 0 60px rgba(6, 30, 98, 0.12);
+}
+.aprtOverlay h5 {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+.aprtOverlay small {
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.aprtOverlay small:hover {
+  color: var(--primary);
+}
+.buttongroup {
+  z-index: 1;
+}
+.customBtnSmall {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.customBtnSmall:hover {
+  background: var(--primary_hover);
+  color: #fff;
+}
+
+/* ========================= apartment part css ========================== */
+/* ========================= fotter part css ========================== */
+.footer {
+  padding: 200px 0 100px;
+  background: var(--secondary);
+  position: relative;
+}
+.imgGallary {
+  position: absolute;
+  top: -20%;
+}
+
+.topImg {
+  width: 100%;
+  height: 250px;
+}
+.topImg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.footerLeft__details {
+  margin-top: 30px;
+  color: var(--footer_text_color);
+  line-height: 25px;
+}
+
+.footermiddle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+.list {
+  column-gap: 150px;
+  margin-top: 26px;
+}
+.list ul {
+  padding-left: 0;
+}
+
+.list ul li a {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 300;
+  color: var(--footer_text_color);
+}
+a i[class="fa-sharp fa-regular fa-minus fa-beat"] {
+  color: var(--primary);
+  margin-right: 5px;
+}
+
+.footerRight__title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.icons {
+  margin-top: 30px;
+}
+.icons a i {
+  width: 40px;
+  height: 40px;
+  background: #17565a;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 7px;
+  color: white;
+}
+.logo img {
+  height: 50px;
+}
+/* ========================= fotter part css ========================== */

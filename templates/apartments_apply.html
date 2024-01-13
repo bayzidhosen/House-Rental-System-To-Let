@@ -1,0 +1,50 @@
+{% extends 'includes/main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-custom gutter-b">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">My Properties:</h3>
+                        </div>
+                        <div class="card-toolbar">
+                            <a href="{% url 'my_apartments' %}" class="btn btn-info">My Properties</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {% if object_list %}
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th width="50px" class="text-center">SL No</th>
+                                        <th class="text-center">Date</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Mobile</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for object in object_list %}
+                                        <tr>
+                                            <td class="text-center">{{ forloop.counter }}</td>
+                                            <td class="text-center">{{ object.created_at.date }}</td>
+                                            <td class="text-center">{{ object.user.name }}</td>
+                                            <td class="text-center">{{ object.user.username }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                {% include 'includes/no_data_found.html' %}
+                            {% endif %}
+                        </div>
+                        {% include 'includes/pagination.html' %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

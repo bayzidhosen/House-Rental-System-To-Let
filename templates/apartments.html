@@ -1,0 +1,66 @@
+{% extends 'includes/main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-custom gutter-b">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">Buyer List</h3>
+                        </div>
+                        <div class="card-toolbar">
+                            <a href="{% url 'apartment_add' %}" class="btn btn-info">Add New</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {% if object_list %}
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th width="50px" class="text-center">SL No</th>
+                                        <th class="text-center">Title</th>
+                                        <th>Area</th>
+                                        <th>Room</th>
+                                        <th>Status</th>
+                                        <th>No of Knock</th>
+                                        <th>Location</th>
+                                        <th width="120px" class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for object in object_list %}
+                                        <tr>
+                                            <td class="text-center">{{ forloop.counter }}</td>
+                                            <td class="text-center">{{ object.title }}</td>
+                                            <td>{{ object.room }}</td>
+                                            <td>{{ object.is_rent_complete|yesno }}</td>
+                                            <td>0</td>
+                                            <td>{{ object.address }}</td>
+                                            <td class="text-center">
+                                                <a href="{% url 'apartment_update' object.pk %}"
+                                                   class="btn btn-sm btn-light-warning">
+                                                    <i class="flaticon-edit"></i>
+                                                </a>
+                                                <a href="{% url 'apartment_delete' object.pk %}"
+                                                   class="btn btn-sm btn-light-danger"><i
+                                                        class="flaticon-delete"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                {% include 'includes/no_data_found.html' %}
+                            {% endif %}
+                        </div>
+                        {% include 'includes/pagination.html' %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

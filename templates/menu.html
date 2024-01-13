@@ -1,0 +1,49 @@
+{% load static %}
+<!-- =================== Navar part start ========================= -->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container p-0">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="logo">
+                <img src="{% static 'images/logo3.png' %}" alt="">
+            </div>
+        </a>
+        <button
+                class="navbar-toggler toogleCustomBtn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon toogleCustomBtn__icon"
+          ><i class="fa-sharp fa-solid fa-bars fa-beat"></i
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-sm-auto customUL">
+                <li class="nav-item me-4">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+                    >Home <span class="dot"></span
+                    ></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="{% url 'apartments' %}"
+                    >Apartment <span class="dot"></span
+                    ></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="{% url 'contacts' %}">Contact <span class="dot"></span></a>
+                </li>
+
+            </ul>
+
+              <a href="{% url 'dashboard' %}"  class="ms-5 customBtn" autocomplete="off">
+                {% if user.is_authenticated %}
+                    Dashboard {% else %} Login {% endif %}
+            </a>
+
+        </div>
+    </div>
+</nav>
+<!-- =================== Navar part End ========================= -->

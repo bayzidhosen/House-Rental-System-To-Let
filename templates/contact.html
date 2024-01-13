@@ -1,0 +1,45 @@
+{% extends 'front.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section class="filter-section">
+        <div class="container">
+            <div class="row">
+                <div class="card-body text-center">
+                    <h2>Contacts us</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <div class="card card-custom gutter-b">
+                        {% include 'includes/form.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block css %}
+
+    <style>
+        .filter-section {
+            background: url("{% static 'images/bg/bg-8.jpg' %}");
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .form-section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .footer {
+            margin-top: 200px;
+        }
+    </style>
+{% endblock %}

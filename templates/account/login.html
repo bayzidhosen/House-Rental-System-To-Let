@@ -1,0 +1,30 @@
+{% extends 'includes/single_main.html' %}
+{% load static account socialaccount %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    {% get_providers as socialaccount_providers %}
+    <!--begin::Login Sign in form-->
+    <div class="login-signin">
+        <div class="mb-5">
+            {% if socialaccount_providers %}
+                <p class="text-muted font-weight-bold">Please sign in with one
+                    of your existing accounts. Or, <a href="{% url 'user_add' %}">sign up</a>
+                    for an account and sign in below:</p>
+
+
+                {% include "socialaccount/snippets/login_extra.html" %}
+
+            {% else %}
+                {#                <p>If you have not created an account yet, then please#}
+                {#                    <a href="{{ signup_url }}">sign up</a> first.</p>#}
+            {% endif %}
+            <h3>Sign In</h3>
+        </div>
+        <form action="" method="post">
+            {% include 'includes/form.html' %}
+        </form>
+    </div>
+    <!--end::Login Sign in form-->
+{% endblock %}

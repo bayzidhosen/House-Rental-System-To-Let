@@ -1,0 +1,256 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}"/>
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
+    <!--end::Fonts-->
+    <!--begin::Page Vendors Styles(used by this page)-->
+    <!--end::Page Vendors Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="{% static 'plugins/global/plugins.bundle.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.bundle.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'plugins/quill/quill.snow.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css"></script>
+    <link href="{% static 'plugins/django_select2/django_select2.css' %}" rel="stylesheet" type="text/css"/>
+    <link
+            rel="stylesheet"
+            data-purpose="Layout StyleSheet"
+            title="Web Awesome"
+            href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="{% static 'css/style_2.css' %}"/>
+    {% block css %}{% endblock %}
+</head>
+<body>
+<!-- =================== Navar part start ========================= -->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container p-0">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="logo">
+                <img src="{% static 'images/logo3.png' %}" alt="">
+            </div>
+        </a>
+        <button
+                class="navbar-toggler toogleCustomBtn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon toogleCustomBtn__icon"
+          ><i class="fa-sharp fa-solid fa-bars fa-beat"></i
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-sm-auto customUL">
+                <li class="nav-item me-4">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+                    >Home <span class="dot"></span
+                    ></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="{% url 'apartments' %}"
+                    >Apartment <span class="dot"></span
+                    ></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="{% url 'contacts' %}">Contact <span class="dot"></span></a>
+                </li>
+
+            </ul>
+
+            <a href="{% url 'dashboard' %}" class="ms-5 customBtn" autocomplete="off">
+                {% if user.is_authenticated %}
+                    Dashboard {% else %} Login {% endif %}
+            </a>
+
+        </div>
+    </div>
+</nav>
+<!-- =================== Navar part End ========================= -->
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- =================== Footer part Start ========================= -->
+<footer class="footer">
+    <div class="container p-0">
+        <div class="row g-0 imgGallary">
+            <div class="col">
+                <div class="topImg">
+                    <picture>
+                        <img
+                                src="{% static 'images/gallery.jpg' %}"
+                                alt=""
+                                class="topImg__img img-fluid w-100"
+                        />
+                    </picture>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="topImg">
+                    <picture>
+                        <img
+                                src="{% static 'images/gallery-9.jpg' %}"
+                                alt=""
+                                class="topImg__img img-fluid w-100"
+                        />
+                    </picture>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="topImg">
+                    <picture>
+                        <img
+                                src="{% static 'images/gallery-12.jpg' %}"
+                                alt=""
+                                class="topImg__img img-fluid w-100"
+                        />
+                    </picture>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="topImg">
+                    <picture>
+                        <img
+                                src="{% static 'images/gallery-9.jpg' %}"
+                                alt=""
+                                class="topImg__img img-fluid w-100"
+                        />
+                    </picture>
+                </div>
+            </div>
+            <div class="col">
+                <div class="topImg">
+                    <picture>
+                        <img
+                                src="{% static 'images/gallery.jpg' %}"
+                                alt=""
+                                class="topImg__img img-fluid w-100"
+                        />
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-3">
+                <div class="footerLeft">
+                    <div class="logo">
+                        <img src="{% static 'images/logo3.png' %}" alt="">
+                    </div>
+
+                    <p class=" footerLeft__details">
+                        House Rental System, the first dedicated rental portal and pioneer PropTech startup in
+                        Bangladesh, was founded in the backend of 2023 and launched its official website in 2024. We
+                        believe only technology can make people's lives easy and simple.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footermiddle">
+                    <h4>Property Type</h4>
+                    <div class="list d-flex">
+                        <ul>
+                            <li>
+                                <a href="#"
+                                ><i class="fa-sharp fa-regular fa-minus fa-beat"></i>
+                                    Property Type</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                ><i class="fa-sharp fa-regular fa-minus fa-beat"></i>
+                                    Luxury House</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                ><i class="fa-sharp fa-regular fa-minus fa-beat"></i>
+                                    Bachelor House</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                ><i class="fa-sharp fa-regular fa-minus fa-beat"></i>
+                                    FAQs</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footerRight">
+                    <h4 class="footerRight__title">Follow Us</h4>
+                    <div class="icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f fa-beat"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube fa-beat"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter fa-beat"></i></a>
+
+                        <a href="#"><i class="fa-brands fa-instagram fa-beat"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- =================== Footer part End ========================= -->
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+></script>
+{% block js %}{% endblock %}
+</body>
+</html>
+
